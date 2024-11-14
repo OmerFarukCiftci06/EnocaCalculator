@@ -24,8 +24,6 @@ export class AppComponent {
   lastItems: LastTreeItems[] = [];
   isDarkMode: boolean= false;
   hasComma: boolean = false;
-  history : string[] = [];
-   //this.arr[this.arr.length-1].split("")
   hasNegative: boolean = false;
   isHistoryActive: boolean = false;
 
@@ -65,7 +63,6 @@ export class AppComponent {
     this.calculation = evaluate(this.currentNumber);
     let store = evaluate(this.currentNumber)
     this.isEqualityOperatorHidden = true;
-    // this.lastItems.push(this.currentNumber)
     if(this.lastItems.length === 3)
     {
        this.lastItems.shift()
@@ -89,22 +86,18 @@ export class AppComponent {
       this.currentNumber = this.currentNumber.startsWith('-') ? this.currentNumber.slice(1) : '-' + this.currentNumber;
       return;
     }
-    
-    // Get the last part of the expression (expected to be the number to toggle)
-    const lastPart = arr.pop();
-    
-    // If lastPart is undefined, return the input (edge case handling)
+
+    const lastPart = arr.pop();  
+
     if (!lastPart) {
          return;
     }
 
-    // Toggle the sign of the last number
     let toggledNumber = lastPart.startsWith('-')
-        ? lastPart.slice(1)  // Remove '-' if it's negative
-        : '-' + lastPart;    // Add '-' if it's positive
-    toggledNumber = toggledNumber.replaceAll(" ","");
+        ? lastPart.slice(1) 
+        : '-' + lastPart; 
     
-    // Reassemble the expression with the toggled last number
+    toggledNumber = toggledNumber.replaceAll(" ","");
     this.currentNumber = arr.join('') + ' '+ toggledNumber;
   }
   }
@@ -115,7 +108,6 @@ export class AppComponent {
     if (!lastPart) {
       return;
     }
-
     let result = parseFloat(lastPart) / 100;
     this.currentNumber = arr.join('') + ' '+ result;
   }
