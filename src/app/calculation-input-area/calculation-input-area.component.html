@@ -1,0 +1,225 @@
+<div class="input-grid-root">
+  <div
+    class="mini-inputs"
+    [ngClass]="{
+      'mini-input-light-mode': !isDarkMode,
+      'mini-input-dark-mode': isDarkMode
+    }"
+  >
+    <button
+      (click)="getReset()"
+      class="mini-input-buttons"
+      [ngClass]="{
+        'mini-input-buttons-light-mode': !isDarkMode,
+        'mini-input-buttons-dark-mode': isDarkMode
+      }"
+    >
+      AC
+    </button>
+    <button
+      (click)="getNegative()"
+      class="mini-input-buttons"
+      [ngClass]="{
+        'mini-input-buttons-light-mode': !isDarkMode,
+        'mini-input-buttons-dark-mode': isDarkMode
+      }"
+    >
+      +/-
+    </button>
+    <button
+      (click)="get100()"
+      class="mini-input-buttons"
+      [ngClass]="{
+        'mini-input-buttons-light-mode': !isDarkMode,
+        'mini-input-buttons-dark-mode': isDarkMode
+      }"
+    >
+      %
+    </button>
+  </div>
+  <div
+    class="math-operators"
+    [ngClass]="{
+      'math-operators-light-mode': !isDarkMode,
+      'math-operators-dark-mode': isDarkMode
+    }"
+  >
+    <button
+      (click)="getOperator('/')"
+      class="math-operator-button"
+      [ngClass]="{
+        'math-operator-button-light-mode': !isDarkMode,
+        'math-operator-button-dark-mode': isDarkMode
+      }"
+    >
+      ÷
+    </button>
+    <button
+      (click)="getOperator('*')"
+      class="math-operator-button"
+      [ngClass]="{
+        'math-operator-button-light-mode': !isDarkMode,
+        'math-operator-button-dark-mode': isDarkMode
+      }"
+    >
+      ×
+    </button>
+    <button
+      (click)="getOperator('-')"
+      class="math-operator-button"
+      [ngClass]="{
+        'math-operator-button-light-mode': !isDarkMode,
+        'math-operator-button-dark-mode': isDarkMode
+      }"
+    >
+      -
+    </button>
+    <button
+      (click)="getOperator('+')"
+      class="math-operator-button"
+      [ngClass]="{
+        'math-operator-button-light-mode': !isDarkMode,
+        'math-operator-button-dark-mode': isDarkMode
+      }"
+    >
+      +
+    </button>
+    <button
+      (click)="equalityOperator()"
+      class="math-equality-operator"
+      [ngClass]="{
+        'math-equality-button-light-mode': !isDarkMode,
+        'math-equality-button-dark-mode': isDarkMode
+      }"
+    >
+      =
+    </button>
+  </div>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('1')"
+  >
+    1
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('2')"
+  >
+    2
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('3')"
+  >
+    3
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('4')"
+  >
+    4
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('5')"
+  >
+    5
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('6')"
+  >
+    6
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('7')"
+  >
+    7
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('8')"
+  >
+    8
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('9')"
+  >
+    9
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('.')"
+  >
+    .
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('0')"
+  >
+    0
+  </button>
+  <button
+    type="button"
+    [ngClass]="{
+      'buttons-light-mode': !isDarkMode,
+      'buttons-dark-mode': isDarkMode
+    }"
+    (click)="getNumber('00')"
+  >
+    00
+  </button>
+  <div
+    class="bar"
+    [ngClass]="{
+      'bar-light-mode': !isDarkMode,
+      'bar-dark-mode': isDarkMode
+    }"
+  ></div>
+</div>

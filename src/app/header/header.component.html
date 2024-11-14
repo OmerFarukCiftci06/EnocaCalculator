@@ -1,0 +1,55 @@
+<div class="button-position">
+  <button
+    class="both-organization"
+    (click)="getChangeLightMode()"
+    [ngClass]="{
+      'both-organization-light-mode': isLightMode,
+      'both-organization-dark-mode': !isLightMode
+    }"
+  >
+    <div
+      class="vektor-position"
+      [ngClass]="{
+        'vektor-position-light-mode': isLightMode,
+        'vektor-position-dark-mode': !isLightMode
+      }"
+    >
+      <img
+        class="vektor-img-position"
+        [src]="
+          isLightMode
+            ? '../../assets/images/sun-light-mode.png'
+            : '../../assets/images/sun-dark-mode.png'
+        "
+        alt="Sun"
+      />
+    </div>
+    <div
+      class="moon-position"
+      [ngClass]="{
+        'moon-position-light-mode': isLightMode,
+        'moon-position-dark-mode': !isLightMode
+      }"
+    >
+      <img
+        class="moon-img-position"
+        [src]="
+          isLightMode
+            ? '../../assets/images/moon-light-mode.png'
+            : '../../assets/images/moon-dark-mode.png'
+        "
+        alt="Moon"
+      />
+    </div>
+  </button>
+  <button class="history-button" (click)="isHistoryActive()">
+    <img
+      [src]="
+        !isLightMode
+          ? '../../assets/images/history-dark-mode.png'
+          : '../../assets/images/history-light-mode.png'
+      "
+      alt="History"
+    />
+  </button>
+</div>

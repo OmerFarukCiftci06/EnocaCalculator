@@ -1,0 +1,30 @@
+<div class="view-area-root">
+  <p
+    class="currentNumberPosition"
+    [ngClass]="{
+      'currentNumber-light-mode': !isDarkMode,
+      'currentNumber-dark-mode': isDarkMode
+    }"
+  >
+    {{ currentNumber }}
+  </p>
+  <div class="calculated-area">
+    <span
+      class="equalityPosition"
+      [ngClass]="{
+        'equality-light-mode': !isDarkMode,
+        'equality-dark-mode': isDarkMode
+      }"
+      [class.hidden]="isEqualityOperatorHidden"
+      >=</span
+    >
+    <span
+      class="resultPosition"
+      [ngClass]="{
+        'result-light-mode': !isDarkMode,
+        'result-dark-mode': isDarkMode
+      }"
+      >{{ calculation }}</span
+    >
+  </div>
+</div>
