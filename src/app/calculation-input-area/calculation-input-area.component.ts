@@ -18,6 +18,28 @@ export class CalculationInputAreaComponent {
   @Output() asd: EventEmitter<string> = new EventEmitter();
   @Input() isDarkMode!: boolean;
 
+  buttons: string[] = ["1","2","3","4","5","6","7","8","9",".","0","00"]
+
+  miniInputs = [
+    { label: 'AC', action: 'getReset()' },
+    { label: '+/-', action: 'getNegative()' },
+    { label: '%', action: 'get100()' }
+  ];
+
+  operators = [
+    {
+      display: "÷", symbol: "/", 
+    },
+    {
+      display: "*", symbol: "*", 
+    },
+    {
+      display: "-", symbol: "-", 
+    },
+    {
+      display: "+", symbol: "+", 
+    }
+  ]
 
   getNumber(value:string){
     this.number.emit(value);

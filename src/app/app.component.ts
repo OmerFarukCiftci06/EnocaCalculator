@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { CalculationViewAreaComponent } from "./calculation-view-area/calculation-view-area.component";
 import { CalculationInputAreaComponent } from "./calculation-input-area/calculation-input-area.component";
-import {evaluate, parse} from 'mathjs';
+import {evaluate} from 'mathjs';
 import { CommonModule } from '@angular/common';
 interface LastTreeItems{
   process: string;
@@ -37,6 +37,13 @@ export class AppComponent {
     }else{
       this.currentNumber += value;
     }
+    //Eşittire bastıktan sonra yeni bir sayı girmeye çalıştığında  0lama
+    if(this.isEqualityOperatorHidden){
+        this.currentNumber = "";
+        this.currentNumber += value;
+        this.isEqualityOperatorHidden = false;
+        this.calculation = "";
+    }
   }
 
   getReset(){
@@ -61,13 +68,27 @@ export class AppComponent {
 
   equalityOperator(){
     this.calculation = evaluate(this.currentNumber);
-    let store = evaluate(this.currentNumber)
     this.isEqualityOperatorHidden = true;
     if(this.lastItems.length === 3)
     {
        this.lastItems.shift()
     }
     this.lastItems.push( { process : this.currentNumber, result : this.calculation})
+
+    if(this.calculation === "Infinity"){
+      this.calculation = "Hata";
+    }
+    //Sayi/0 kontrolü arka arkaya bölme işlemlerinde 12 / 5 / 0 gibi bir işlemde infinity geliyor.
+    let divideSplit= this.currentNumber.split(" / ");
+    if(divideSplit.length >= 2){
+      for(let i = 1 ; i < divideSplit.length; i+2){
+        if(divideSplit[i] === "0"){
+          console.log("Sayi/0 yapamazsınız.");
+          this.calculation = "Sayi/0"
+        }
+        return;
+      }
+    }
     
   }
 
