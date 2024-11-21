@@ -15,4 +15,11 @@ export class CalculationViewAreaComponent {
   @Input() calculation !: string;
   @Input() isEqualityOperatorHidden !: boolean;
   @Input() isDarkMode !: boolean;
+
+  getThemeClass(baseClass: string): { [key: string]: boolean } {
+    return {
+      [`${baseClass}-light-mode`]: !this.isDarkMode,
+      [`${baseClass}-dark-mode`]: this.isDarkMode
+    };
+  }
 }

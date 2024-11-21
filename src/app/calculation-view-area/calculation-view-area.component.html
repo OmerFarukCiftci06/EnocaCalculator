@@ -1,30 +1,16 @@
 <div class="view-area-root">
-  <p
-    class="currentNumberPosition"
-    [ngClass]="{
-      'currentNumber-light-mode': !isDarkMode,
-      'currentNumber-dark-mode': isDarkMode
-    }"
-  >
+  <p class="currentNumberPosition" [ngClass]="getThemeClass('currentNumber')">
     {{ currentNumber }}
   </p>
   <div class="calculated-area">
     <span
       class="equalityPosition"
-      [ngClass]="{
-        'equality-light-mode': !isDarkMode,
-        'equality-dark-mode': isDarkMode
-      }"
+      [ngClass]="getThemeClass('equality')"
       [class.hidden]="isEqualityOperatorHidden"
       >=</span
     >
-    <span
-      class="resultPosition"
-      [ngClass]="{
-        'result-light-mode': !isDarkMode,
-        'result-dark-mode': isDarkMode
-      }"
-      >{{ calculation }}</span
+    <span class="resultPosition" [ngClass]="getThemeClass('result')">
+      {{ calculation }}</span
     >
   </div>
 </div>

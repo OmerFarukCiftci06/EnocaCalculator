@@ -20,12 +20,12 @@ export class CalculationInputAreaComponent {
 
   buttons: string[] = ["1","2","3","4","5","6","7","8","9",".","0","00"]
 
-  miniInputs = [
-    { label: 'AC', action: 'getReset()' },
-    { label: '+/-', action: 'getNegative()' },
-    { label: '%', action: 'get100()' }
+  miniInputActions = [
+    { label: 'AC', handler: this.getReset.bind(this) },
+    { label: '+/-', handler: this.getNegative.bind(this) },
+    { label: '%', handler: this.get100.bind(this) }
   ];
-
+  
   operators = [
     {
       display: "÷", symbol: "/", 
@@ -40,6 +40,13 @@ export class CalculationInputAreaComponent {
       display: "+", symbol: "+", 
     }
   ]
+
+  getThemeClass(baseClass: string): { [key: string]: boolean } {
+    return {
+      [`${baseClass}-light-mode`]: !this.isDarkMode,
+      [`${baseClass}-dark-mode`]: this.isDarkMode
+    };
+  }
 
   getNumber(value:string){
     this.number.emit(value);

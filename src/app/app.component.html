@@ -14,7 +14,7 @@
   <main>
     <app-calculation-view-area
       [isEqualityOperatorHidden]="!isEqualityOperatorHidden"
-      [currentNumber]="currentNumber ? currentNumber : defaultNumber"
+      [currentNumber]="currentNumber || defaultNumber"
       [calculation]="calculation"
       [isDarkMode]="isDarkMode"
     />

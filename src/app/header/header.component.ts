@@ -14,6 +14,21 @@ export class HeaderComponent {
 
   isLightMode: boolean = true;
 
+  getThemeClass(baseClass: string): { [key: string]: boolean } {
+    return {
+      [`${baseClass}-light-mode`]: this.isLightMode,
+      [`${baseClass}-dark-mode`]: !this.isLightMode
+    };
+  }
+
+
+  getSrc(baseSource: string): { [key: string]: boolean } {
+    return {
+      [`../../assets/images/${baseSource}-light-mode.png`]: this.isLightMode,
+      [`../../assets/images/${baseSource}-dark-mode.png`]: !this.isLightMode
+    };
+  }
+
   isHistoryActive(){
     this.historyVisulizationEvent.emit();
   }

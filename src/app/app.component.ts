@@ -24,12 +24,10 @@ export class AppComponent {
   lastItems: LastTreeItems[] = [];
   isDarkMode: boolean= false;
   hasComma: boolean = false;
-  hasNegative: boolean = false;
   isHistoryActive: boolean = false;
 
   getNumber(value: string){
-    if(value=== "."){
-      
+    if(value=== "."){      
       if(!this.hasComma){
         this.currentNumber += value;
         this.hasComma = true;
@@ -37,7 +35,7 @@ export class AppComponent {
     }else{
       this.currentNumber += value;
     }
-    //Eşittire bastıktan sonra yeni bir sayı girmeye çalıştığında  0lama
+
     if(this.isEqualityOperatorHidden){
         this.currentNumber = "";
         this.currentNumber += value;
@@ -51,11 +49,14 @@ export class AppComponent {
     this.isEqualityOperatorHidden = false;
     this.calculation = "";
     this.hasComma = false;
-    this.hasNegative= false;
+  }
+
+  getInput(){
+    return this.currentNumber.trim().charAt(this.currentNumber.length -1)
   }
 
   getOperator(value:string){
-    if(this.currentNumber.trim().charAt(this.currentNumber.length -1) >= '0' && this.currentNumber.trim().charAt(this.currentNumber.length -1) <= '9'){
+    if(this.getInput() >= '0' && this.getInput() <= '9'){
       this.currentNumber += ` ${value} `
     }
     else{
@@ -63,7 +64,6 @@ export class AppComponent {
       this.currentNumber += ` ${value} `
     }
     this.hasComma = false;
-    this.hasNegative = false;
   }
 
   equalityOperator(){
@@ -75,21 +75,9 @@ export class AppComponent {
     }
     this.lastItems.push( { process : this.currentNumber, result : this.calculation})
 
-    if(this.calculation === "Infinity"){
-      this.calculation = "Hata";
-    }
-    //Sayi/0 kontrolü arka arkaya bölme işlemlerinde 12 / 5 / 0 gibi bir işlemde infinity geliyor.
-    let divideSplit= this.currentNumber.split(" / ");
-    if(divideSplit.length >= 2){
-      for(let i = 1 ; i < divideSplit.length; i+2){
-        if(divideSplit[i] === "0"){
-          console.log("Sayi/0 yapamazsınız.");
-          this.calculation = "Sayi/0"
-        }
-        return;
-      }
-    }
-    
+    if(this.calculation == "Infinity" || this.calculation == "-Infinity"){
+      this.calculation = "Sayi/0";
+    }    
   }
 
   getChangeLightMode(){
@@ -101,7 +89,7 @@ export class AppComponent {
   }
 
   getNegative(){
-  if(this.currentNumber.trim().charAt(this.currentNumber.length -1) >= '0' && this.currentNumber.trim().charAt(this.currentNumber.length -1) <= '9'){
+  if(this.getInput() >= '0' && this.getInput() <= '9'){
     const arr = this.currentNumber.split(' ');
     if (arr.length === 1) {
       this.currentNumber = this.currentNumber.startsWith('-') ? this.currentNumber.slice(1) : '-' + this.currentNumber;
@@ -118,8 +106,7 @@ export class AppComponent {
         ? lastPart.slice(1) 
         : '-' + lastPart; 
     
-    toggledNumber = toggledNumber.replaceAll(" ","");
-    this.currentNumber = arr.join('') + ' '+ toggledNumber;
+    this.currentNumber = arr.join(' ') + ' ' + toggledNumber;
   }
   }
 
@@ -130,6 +117,6 @@ export class AppComponent {
       return;
     }
     let result = parseFloat(lastPart) / 100;
-    this.currentNumber = arr.join('') + ' '+ result;
+    this.currentNumber = arr.join(' ') + ' ' + result;
   }
 }

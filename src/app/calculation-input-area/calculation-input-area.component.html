@@ -1,61 +1,24 @@
 <div class="input-grid-root">
   <!-- Mini Inputs Section -->
   <!-- Burada ki hata click eventinin içerisinde ki miniInput.action ile tanımlanmış olan fonsiyon girdileri yüklenirken . -->
-  <div
-    class="mini-inputs"
-    [ngClass]="{
-      'mini-input-light-mode': !isDarkMode,
-      'mini-input-dark-mode': isDarkMode
-    }"
-  >
+  <div class="mini-inputs" [ngClass]="getThemeClass('mini-input')">
     <button
-      (click)="getReset()"
+      *ngFor="let action of miniInputActions"
+      (click)="action.handler()"
       class="mini-input-buttons"
-      [ngClass]="{
-        'mini-input-buttons-light-mode': !isDarkMode,
-        'mini-input-buttons-dark-mode': isDarkMode
-      }"
+      [ngClass]="getThemeClass('mini-input-buttons')"
     >
-      AC
-    </button>
-    <button
-      (click)="getNegative()"
-      class="mini-input-buttons"
-      [ngClass]="{
-        'mini-input-buttons-light-mode': !isDarkMode,
-        'mini-input-buttons-dark-mode': isDarkMode
-      }"
-    >
-      +/-
-    </button>
-    <button
-      (click)="get100()"
-      class="mini-input-buttons"
-      [ngClass]="{
-        'mini-input-buttons-light-mode': !isDarkMode,
-        'mini-input-buttons-dark-mode': isDarkMode
-      }"
-    >
-      %
+      {{ action.label }}
     </button>
   </div>
 
   <!--Operator Section-->
-  <div
-    class="math-operators"
-    [ngClass]="{
-      'math-operators-light-mode': !isDarkMode,
-      'math-operators-dark-mode': isDarkMode
-    }"
-  >
+  <div class="math-operators" [ngClass]="getThemeClass('math-operators')">
     <ng-container *ngFor="let operator of operators">
       <button
         (click)="getOperator(operator.symbol)"
         class="math-operator-button"
-        [ngClass]="{
-          'math-operator-button-light-mode': !isDarkMode,
-          'math-operator-button-dark-mode': isDarkMode
-        }"
+        [ngClass]="getThemeClass('math-operator-button')"
       >
         {{ operator.display }}
       </button>
@@ -63,10 +26,7 @@
     <button
       (click)="equalityOperator()"
       class="math-equality-operator"
-      [ngClass]="{
-        'math-equality-button-light-mode': !isDarkMode,
-        'math-equality-button-dark-mode': isDarkMode
-      }"
+      [ngClass]="getThemeClass('math-equality-button')"
     >
       =
     </button>
@@ -76,21 +36,12 @@
   <ng-container *ngFor="let button of buttons">
     <button
       type="button"
-      [ngClass]="{
-        'buttons-light-mode': !isDarkMode,
-        'buttons-dark-mode': isDarkMode
-      }"
+      [ngClass]="getThemeClass('buttons')"
       (click)="getNumber(button)"
     >
       {{ button }}
     </button>
   </ng-container>
   <!--Bar-->
-  <div
-    class="bar"
-    [ngClass]="{
-      'bar-light-mode': !isDarkMode,
-      'bar-dark-mode': isDarkMode
-    }"
-  ></div>
+  <div class="bar" [ngClass]="getThemeClass('bar')"></div>
 </div>

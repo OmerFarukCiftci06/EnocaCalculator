@@ -36,10 +36,15 @@ footer{
 }
 
 .footer-light-mode{
-    background: linear-gradient(90deg, rgba(183,238,247,1) 0%, rgba(131,212,247,1) 33%, rgba(103,180,250,1) 66%, rgba(83,206,253,1) 100%);
-    
-}
+    /* background: linear-gradient(90deg, rgba(183,238,247,1) 0%, rgba(131,212,247,1) 33%, rgba(103,180,250,1) 66%, rgba(83,206,253,1) 100%), linear-gradient(90deg, rgb(149, 37, 73,0) 0%, rgba(131,212,247,0.5) 33%, rgba(174, 83, 61,0.2) 66%, rgba(0, 8, 10,0.9) 100%); */
+    background: rgb(231,243,252);
+    background: linear-gradient(90deg, rgba(231,243,252,1) 0%, rgba(148,220,255,1) 100%);
 
+}
+/* .asd{
+    background: rgba(230, 246, 255, 0.2);
+    box-shadow: 0px -5px 70px 0px rgba(0, 0, 0, 0.1);
+} */
 .footer-dark-mode{
     background: linear-gradient(90deg, rgba(9,25,42,0.9445028011204482) 0%, rgba(33,87,116,1) 33%, rgba(6,100,138,1) 66%, rgba(27,110,145,1) 100%);
     backdrop-filter: blur(0px)

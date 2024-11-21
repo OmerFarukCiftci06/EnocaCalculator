@@ -2,18 +2,9 @@
   <button
     class="both-organization"
     (click)="getChangeLightMode()"
-    [ngClass]="{
-      'both-organization-light-mode': isLightMode,
-      'both-organization-dark-mode': !isLightMode
-    }"
+    [ngClass]="getThemeClass('both-organization')"
   >
-    <div
-      class="vektor-position"
-      [ngClass]="{
-        'vektor-position-light-mode': isLightMode,
-        'vektor-position-dark-mode': !isLightMode
-      }"
-    >
+    <div class="vektor-position" [ngClass]="getThemeClass('vektor-position')">
       <img
         class="vektor-img-position"
         [src]="
@@ -24,13 +15,7 @@
         alt="Sun"
       />
     </div>
-    <div
-      class="moon-position"
-      [ngClass]="{
-        'moon-position-light-mode': isLightMode,
-        'moon-position-dark-mode': !isLightMode
-      }"
-    >
+    <div class="moon-position" [ngClass]="getThemeClass('moon-position')">
       <img
         class="moon-img-position"
         [src]="
