@@ -5,36 +5,13 @@
     [ngClass]="getThemeClass('both-organization')"
   >
     <div class="vektor-position" [ngClass]="getThemeClass('vektor-position')">
-      <img
-        class="vektor-img-position"
-        [src]="
-          isLightMode
-            ? '../../assets/images/sun-light-mode.png'
-            : '../../assets/images/sun-dark-mode.png'
-        "
-        alt="Sun"
-      />
+      <img class="vektor-img-position" [src]="getSrc('sun')" alt="Sun" />
     </div>
     <div class="moon-position" [ngClass]="getThemeClass('moon-position')">
-      <img
-        class="moon-img-position"
-        [src]="
-          isLightMode
-            ? '../../assets/images/moon-light-mode.png'
-            : '../../assets/images/moon-dark-mode.png'
-        "
-        alt="Moon"
-      />
+      <img class="moon-img-position" [src]="getSrc('moon')" alt="Moon" />
     </div>
   </button>
   <button class="history-button" (click)="isHistoryActive()">
-    <img
-      [src]="
-        !isLightMode
-          ? '../../assets/images/history-dark-mode.png'
-          : '../../assets/images/history-light-mode.png'
-      "
-      alt="History"
-    />
+    <img [src]="getSrc('history')" alt="History" />
   </button>
 </div>

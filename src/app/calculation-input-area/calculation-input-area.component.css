@@ -1,18 +1,19 @@
-.input-grid-root{
+.input-grid-root {
     display: grid;
     gap: 20px 25px;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(5,1fr) 19px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr) 19px;
     padding: 26px 34px 0px 34px;
     grid-template-areas:
-    "A A A C"
-    ". . . C"
-    ". . . C"
-    ". . . C"
-    ". . . C"
-    ". B B .";
+        "A A A C"
+        ". . . C"
+        ". . . C"
+        ". . . C"
+        ". . . C"
+        ". B B .";
 }
-button{
+
+button {
     border: none;
     border-radius: 50%;
     width: 70px;
@@ -24,7 +25,7 @@ button{
     text-align: center;
 }
 
-.mini-inputs{
+.mini-inputs {
     display: grid;
     grid-area: A;
     grid-template-columns: subgrid;
@@ -32,39 +33,37 @@ button{
     border-radius: 40px;
 }
 
-.mini-input-light-mode{
+.mini-input-light-mode {
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
     background: rgba(255, 255, 255, 0.3);
 }
-.mini-input-dark-mode{
+
+.mini-input-dark-mode {
     background: rgba(5, 5, 5, 0.3);
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
 }
 
-.buttons-light-mode{
+.buttons-light-mode {
     background: rgba(255, 255, 255, 0.3);
 }
 
-.buttons-dark-mode{
+.buttons-dark-mode {
     background: rgba(5, 5, 5, 0.3);
     color: rgba(251, 251, 251, 1);
 }
 
-.mini-input-buttons-light-mode{
+.mini-input-buttons-light-mode {
     background: none;
-    color:rgba(55, 55, 55, 1);
+    color: rgba(55, 55, 55, 1);
 }
 
-.mini-input-buttons-dark-mode{
+.mini-input-buttons-dark-mode {
     background: none;
     color: rgba(251, 251, 251, 1);
 }
 
 
-
-
-
-.math-operators{
+.math-operators {
     background: rgba(255, 255, 255, 0.3);
     display: grid;
     border-radius: 40px;
@@ -74,59 +73,54 @@ button{
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
 }
 
-.math-operators-light-mode{
+.math-operators-light-mode {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
 }
 
-.math-operators-dark-mode{
+.math-operators-dark-mode {
     background: rgba(5, 5, 5, 0.3);
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
     color: rgba(251, 251, 251, 1)
 }
 
-.math-operator-button-light-mode{
-    
+.math-operator-button-light-mode {
     color: rgba(55, 55, 55, 1);
-
     background: none;
 }
 
-.math-operator-button-dark-mode{
+.math-operator-button-dark-mode {
     color: rgba(251, 251, 251, 1);
     background: none;
 }
 
-.math-equality-operator{
+.math-equality-operator {
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.05);
-
 }
 
-.math-equality-button-light-mode{
+.math-equality-button-light-mode {
     background: rgba(255, 255, 255, 0.2);
     color: rgba(55, 55, 55, 1);
 
 }
 
-.math-equality-button-dark-mode{
+.math-equality-button-dark-mode {
     background: rgba(5, 5, 5, 0.2);
     color: rgba(251, 251, 251, 1);
 }
 
-.bar{
+.bar {
     display: grid;
     grid-area: B;
-    /* grid-template-columns: subgrid;
-    grid-template-rows: subgrid; */
     height: 5px;
     border-radius: 25px;
-    margin: 0 -5px;    
+    margin: 0 -5px;
 }
 
-.bar-light-mode{
+.bar-light-mode {
     background: rgba(99, 150, 197, 1);
 }
 
-.bar-dark-mode{
+.bar-dark-mode {
     background: rgba(61, 118, 171, 1);
 }

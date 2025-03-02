@@ -1,16 +1,14 @@
-
-.button-position{
+.button-position {
     display: flex;
     justify-content: center;
     padding-top: 52px;
-    margin-right: 34px; 
-    border:none;
+    margin-right: 34px;
     height: 44px;
     border: none;
 }
 
 
-.both-organization-light-mode{
+.both-organization-light-mode {
     width: 122px;
     height: 100%;
     margin-left: auto;
@@ -22,7 +20,7 @@
     border: none;
 }
 
-.vektor-position-light-mode{
+.vektor-position-light-mode {
     background: rgba(216, 238, 255, 1);
     border-radius: 40px;
     flex-grow: 8;
@@ -31,7 +29,7 @@
     justify-content: center;
 }
 
-.moon-position-light-mode{
+.moon-position-light-mode {
     border-radius: 40px;
     flex-grow: 5;
     display: inline-flex;
@@ -39,7 +37,7 @@
     justify-content: center;
 }
 
-.both-organization-dark-mode{
+.both-organization-dark-mode {
     width: 122px;
     height: 100%;
     margin-left: auto;
@@ -51,7 +49,7 @@
     border: none;
 }
 
-.vektor-position-dark-mode{
+.vektor-position-dark-mode {
     border-radius: 40px;
     flex-grow: 5;
     display: inline-flex;
@@ -59,7 +57,7 @@
     justify-content: center;
 }
 
-.moon-position-dark-mode{
+.moon-position-dark-mode {
     background: rgba(0, 54, 97, 1);
     border-radius: 40px;
     flex-grow: 8;
@@ -68,17 +66,18 @@
     justify-content: center;
 }
 
-.vektor-img-position{
+.vektor-img-position {
     width: 29.74px;
     height: 29.74px;
 
 }
-.moon-img-position{
+
+.moon-img-position {
     width: 29.74px;
     height: 29.74px;
 }
 
-.history-button{
+.history-button {
     display: flex;
     background: transparent;
     justify-content: center;
@@ -87,4 +86,3 @@
     border: none;
     padding: 0;
 }
-
